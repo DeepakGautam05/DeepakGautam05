@@ -55,32 +55,6 @@
 
 ### 🐍 GitHub Contribution Snake
 
-name: Generate Snake Animation
-
-on:
-  # Automatically runs at 5:30 AM IST every day
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-
-jobs:
-  generate-snake:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate GitHub Contribution Snake
-        uses: Platane/snk@master
-        with:
-          github_user_name: DeepakGautam05
-          outputs: |
-            ./output/snake.svg
-
-      - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: output
-          build_dir: output
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
 <img src="https://raw.githubusercontent.com/DeepakGautam05/DeepakGautam05/output/snake.svg" alt="Snake animation" />
